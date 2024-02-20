@@ -4,8 +4,10 @@ import styled from "styled-components";
 import DestDetails from "./Feed/DestDetails";
 import { getDestinRoute } from "../utils/api-routes";
 import AddTrip from "./Feed/AddTrip";
+import ShowTrip from "./Feed/ShowTrip";
 export default function Feed({feed}) {
   const [data, setData] = useState([]);
+  const [addShowTrip,setAddShowTrip] = useState("show")
   useEffect(() => {
     async function getDest() {
       try {
@@ -37,12 +39,14 @@ export default function Feed({feed}) {
     case "trip":
       return (
         <Container>
-          {true ? (
+          {addShowTrip==="add" ? (
             <AddTripContainer>
-              <AddTrip/>
+              <AddTrip setAddShowTrip={setAddShowTrip}/>
             </AddTripContainer>
           ) : (
-            <TripDetailsContainer></TripDetailsContainer>
+            <TripDetailsContainer>
+              <ShowTrip setAddShowTrip={setAddShowTrip}/>
+            </TripDetailsContainer>
           )}
         </Container>
       );

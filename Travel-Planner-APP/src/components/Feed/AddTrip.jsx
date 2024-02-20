@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
 
-export default function AddTrip() {
+export default function AddTrip({setAddShowTrip}) {
   const [departureDate, setDepartureDate] = useState(null);
   const [arrivalTime, setArrivalTime] = useState(null);
   const [returnDate, setReturnDate] = useState(null);
@@ -172,9 +172,9 @@ export default function AddTrip() {
             </div>
           )}
         </DropzoneContainer>
-
         <SubmitButton type="submit">Submit</SubmitButton>
       </form>
+      <FloatingActionButton onClick={()=>setAddShowTrip("show")}>X</FloatingActionButton>
     </Container>
   );
 }
@@ -262,3 +262,21 @@ const SubmitButton = styled.button`
   cursor: pointer;
 `;
 
+const FloatingActionButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #61dafb;
+  color: white;
+  padding: 15px;
+  border: none;
+  font-size: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #4e0eff;
+  }
+`;
