@@ -14,7 +14,7 @@ export default function ProfileButtons({changeMenu,setFeed}) {
         <Feed className="icon" size="27"/>
         <h2>Home</h2>
       </div>
-      <div className="search button" onClick={()=>changeMenu("Search")}>
+      <div className="search button" onClick={()=>setFeed("search")}>
         <Search className="icon" size="27"/>
         <h2>Search</h2>
       </div>

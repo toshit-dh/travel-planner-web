@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Profile from "./Account/Profile";
-import ProfileSearch from "./Account/ProfileSearch";
 import { useNavigate } from "react-router-dom";
 import ProfileDirect from "./Account/ProfileDirect";
 import ProfileSettings from "./Account/ProfileSettings";
 import Messages from "./Account/Messages";
 import EditProfile from "./Account/EditProfile";
-import UserPosts from "./Account/UserPosts";
 export default function Account({ setMessages,changeMenu,menu,setFeed}) {
   const navigate = useNavigate()
   useEffect(()=>{
@@ -46,6 +44,7 @@ export default function Account({ setMessages,changeMenu,menu,setFeed}) {
           <EditProfile changeMenu={changeMenu} user={user}/>
         </Container>
       );
+      
   }
 }
 const Container = styled.div`

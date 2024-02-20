@@ -4,11 +4,11 @@ import ProfileLogo from "../Profile/ProfileLogo";
 import ProfileInfo from "../Profile/ProfileInfo";
 import ProfileButtons from "../Profile/ProfileButtons";
 import Logout from "../Profile/Logout";
-export default function Profile({changeMenu,setSearchWhat,setFeed}) {
+export default function Profile({changeMenu,setFeed}) {
   return (<Container>
     <ProfileLogo/>
     <ProfileInfo changeMenu={changeMenu}/>
-    <ProfileButtons changeMenu={changeMenu} setSearchWhat={setSearchWhat} setFeed={setFeed}/>
+    <ProfileButtons changeMenu={changeMenu} setFeed={setFeed}/>
     <Logout/>
   </Container>);
 }

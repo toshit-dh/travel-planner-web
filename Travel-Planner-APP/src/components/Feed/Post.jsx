@@ -12,7 +12,6 @@ import {
 import Dialog from "./Dialog";
 export default function Post({addpost,postData}) {
   const [seeMore, setSeeMore] = useState(false);
-  const [modalOpen, setModalOpen] = useState([false, ""]);
   const [selectedButton, setSelectedButton] = useState("");
   const arr = [1, 1, 1, 17];
   const handleCloseModal = () => {
@@ -99,13 +98,6 @@ export default function Post({addpost,postData}) {
                 <img src={Logo} alt="" key={index} />
               ))}
             </Carousel>
-            {!addpost && modalOpen && (
-              <Dialog
-                modalOpen={modalOpen[0]}
-                close={handleCloseModal}
-                modalType={modalOpen[1]}
-              />
-            )}
           </div>
         </div>
       </div>

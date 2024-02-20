@@ -5,6 +5,7 @@ import DestDetails from "./Feed/DestDetails";
 import { getDestinRoute } from "../utils/api-routes";
 import AddTrip from "./Feed/AddTrip";
 import ShowTrip from "./Feed/ShowTrip";
+import Search from "./Feed/Search";
 export default function Feed({feed}) {
   const [data, setData] = useState([]);
   const [addShowTrip,setAddShowTrip] = useState("show")
@@ -50,6 +51,12 @@ export default function Feed({feed}) {
           )}
         </Container>
       );
+      case "search":
+        return(
+          <Container>
+            <Search/>
+          </Container>
+        )
   }
 }
 
